@@ -1,0 +1,22 @@
+name: Self-hosted Runner Example
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v2
+      
+      - name: Print Operating System
+        run: echo "Operating System: ${{ runner.os }}"
+      
+      - name: Print Processor Architecture
+        run: echo "Processor Architecture: ${{ runner.arch }}"
+      
+      - name: Print Runner Version
+        run: echo "Runner Version: ${{ runner.version }}"
